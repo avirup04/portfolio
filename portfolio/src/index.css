@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-accent: var(--accent);
+}
+
+:root {
+  --ink: #1A2436;
+  --paper: #F4F4F0;
+  --accent: #8A9A9D; /* Particles use this! */
+}
+
+.dark {
+  --ink: #E2E8F0;
+  --paper: #0F172A;
+  --accent: #A5B4FC; /* Particles use this in dark mode! */
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  /* This ensures the whole site "slides" into dark mode smoothly */
+  transition: background-color 0.5s ease, color 0.5s ease;
+  margin: 0;
+}
+
+/* --- IMAGE MASKS --- */
+/* These create the artistic "fade-away" effect on the edges of your portrait */
+
+/* Used on Desktop: Fades the right side of the image */
+.mask-horizontal-fade {
+  mask-image: linear-gradient(to right, black 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 60%, transparent 100%);
+}
+
+/* Used on Mobile: Fades the bottom of the image into the text */
+.mask-fade-bottom {
+  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+}
+
+/* Optional: Makes the scrollbar look premium and themed */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--paper);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 10px;
+}
