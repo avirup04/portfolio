@@ -5,9 +5,10 @@ const DarkModeToggle = ({ isDark, setIsDark }) => {
   return (
     <button
       onClick={() => setIsDark(!isDark)}
-      className="fixed top-6 right-8 z-50 p-3 rounded-full bg-white/20 backdrop-blur-md border border-[var(--color-accent)]/30 text-[var(--color-ink)] hover:scale-110 transition-all duration-300 shadow-lg cursor-pointer"
+      // Removed fixed positioning so Layout.jsx can control where it sits!
+      className="flex items-center justify-center w-10 h-10 rounded-full bg-paper/50 backdrop-blur-md border border-accent/30 text-ink hover:scale-110 transition-all duration-300 shadow-sm focus:outline-none cursor-pointer"
     >
-      {isDark ? <FaSun className="text-amber-400" /> : <FaMoon />}
+      {isDark ? <FaSun className="text-amber-400 text-lg" /> : <FaMoon className="text-lg" />}
     </button>
   );
 };
